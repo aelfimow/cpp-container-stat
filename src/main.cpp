@@ -20,19 +20,16 @@ try
 
     std::cout << "Max. steps: " << maxSteps << std::endl;
 
-    size_t cnt = 0;
-
     std::vector<uint8_t> buffer;
 
-    auto tsc0 = rdtsc_func();
-
-    while (cnt < maxSteps)
+    auto tsc0 = ::rdtsc_func();
     {
-        buffer.push_back(0);
-        ++cnt;
+        for (size_t step = 0; step < maxSteps; ++step)
+        {
+            buffer.push_back(0);
+        }
     }
-
-    auto tsc1 = rdtsc_func();
+    auto tsc1 = ::rdtsc_func();
 
     auto diff = tsc1 - tsc0;
 
