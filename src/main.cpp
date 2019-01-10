@@ -1,11 +1,13 @@
 #include <iostream>
 #include <sstream>
+#include <vector>
 
+extern "C" uint64_t rdtsc_func(void);
 
 int main(int argc, char *argv[])
 try
 {
-    if (argc != 3)
+    if (argc != 2)
     {
         throw std::invalid_argument("Usage: maxSteps");
     }
@@ -17,6 +19,24 @@ try
     }
 
     std::cout << "Max. steps: " << maxSteps << std::endl;
+
+    size_t cnt = 0;
+
+    std::vector<uint8_t> buffer;
+
+    auto tsc0 = rdtsc_func();
+
+    while (cnt < maxSteps)
+    {
+        buffer.push_back(0);
+        ++cnt;
+    }
+
+    auto tsc1 = rdtsc_func();
+
+    auto diff = tsc1 - tsc0;
+
+    std::cout << "Clocks: " << diff << std::endl;
 
     return EXIT_SUCCESS;
 }
