@@ -1,8 +1,8 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
+#include "rdtsc_func.h"
 
-extern "C" uint64_t rdtsc_func(void);
 
 int main(int argc, char *argv[])
 try
