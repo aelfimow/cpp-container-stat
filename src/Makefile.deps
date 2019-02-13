@@ -1,1 +1,2 @@
-main.o: main.cpp
+CppContainer.o: CppContainer.cpp CppContainer.h IContainer.h
+main.o: main.cpp rdtsc_func.h
