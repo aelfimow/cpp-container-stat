@@ -1,3 +1,4 @@
 src/cpp-container-stat.exe
 src/main.o
 src/rdtsc_func.o
+src/CppContainer.o
