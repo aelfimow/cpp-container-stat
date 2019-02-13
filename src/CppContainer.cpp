@@ -4,13 +4,14 @@
 
 #include "CppContainer.h"
 #include "IContainer.h"
+#include "vector_uint8.h"
 
 
 IContainer *CppContainer::instantiate(std::string const &type)
 {
     static std::map<std::string, std::function<IContainer *()>> const containers
     {
-        { "vector", []() { return nullptr; } },
+        { "vector_uint8", []() { return new vector_uint8; } },
     };
 
     if (auto it = containers.find(type); it != containers.end())
