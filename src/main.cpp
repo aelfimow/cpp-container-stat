@@ -1,7 +1,9 @@
 #include <iostream>
 #include <sstream>
-#include <vector>
+#include <memory>
 #include "rdtsc_func.h"
+#include "CppContainer.h"
+#include "IContainer.h"
 
 
 int main(int argc, char *argv[])
@@ -20,15 +22,20 @@ try
 
     std::cout << "Max. steps: " << maxSteps << std::endl;
 
-    std::vector<uint8_t> buffer;
+    std::unique_ptr<IContainer> container(CppContainer::instantiate("vector_uint8"));
+
+    if (!container)
+    {
+        throw std::invalid_argument("No container");
+    }
 
     auto tsc0 = ::rdtsc_func();
+
+    for (size_t step = 0; step < maxSteps; ++step)
     {
-        for (size_t step = 0; step < maxSteps; ++step)
-        {
-            buffer.push_back(0);
-        }
+        container->run();
     }
+
     auto tsc1 = ::rdtsc_func();
 
     auto diff = tsc1 - tsc0;
