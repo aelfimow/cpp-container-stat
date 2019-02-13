@@ -1,2 +1,3 @@
 CppContainer.o: CppContainer.cpp CppContainer.h IContainer.h
 main.o: main.cpp rdtsc_func.h
+vector_uint8.o: vector_uint8.cpp IContainer.h vector_uint8.h
