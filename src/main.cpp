@@ -11,7 +11,7 @@ try
 {
     if (argc != 2)
     {
-        throw std::invalid_argument("Usage: maxSteps");
+        throw std::invalid_argument("Usage: maxSteps [container]");
     }
 
     size_t maxSteps = 0;
@@ -20,13 +20,22 @@ try
         ss >> maxSteps;
     }
 
-    std::cout << "Max. steps: " << maxSteps << std::endl;
+    std::string container_type { "vector_uint8" };
+    if (argc > 2)
+    {
+        container_type.clear();
+        container_type.append(argv[2]);
+    }
 
-    std::unique_ptr<IContainer> container(CppContainer::instantiate("vector_uint8"));
+    std::cout << "Max. steps: " << maxSteps << std::endl;
+    std::cout << "Container: " << container_type << std::endl;
+
+    std::unique_ptr<IContainer> container(CppContainer::instantiate(container_type));
 
     if (!container)
     {
-        throw std::invalid_argument("No container");
+        std::string const msg { "No container: " + container_type };
+        throw std::invalid_argument(msg);
     }
 
     auto tsc0 = ::rdtsc_func();
