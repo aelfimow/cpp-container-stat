@@ -1,4 +1,5 @@
 CppContainer.o: CppContainer.cpp CppContainer.h IContainer.h \
- vector_uint8.h
+ vector_uint8.h vector_uint16.h
 main.o: main.cpp rdtsc_func.h CppContainer.h IContainer.h
 vector_uint8.o: vector_uint8.cpp IContainer.h vector_uint8.h
+vector_uint16.o: vector_uint16.cpp IContainer.h vector_uint16.h
