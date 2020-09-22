@@ -6,6 +6,7 @@
 #include "IContainer.h"
 #include "vector_uint8.h"
 #include "vector_uint16.h"
+#include "vector_uint32.h"
 
 
 IContainer *CppContainer::instantiate(std::string const &type)
@@ -13,7 +14,8 @@ IContainer *CppContainer::instantiate(std::string const &type)
     static std::map<std::string, std::function<IContainer *()>> const containers
     {
         { "vector_uint8", []() { return new vector_uint8; } },
-        { "vector_uint16", []() { return new vector_uint16; } }
+        { "vector_uint16", []() { return new vector_uint16; } },
+        { "vector_uint32", []() { return new vector_uint32; } }
     };
 
     if (auto it = containers.find(type); it != containers.end())
