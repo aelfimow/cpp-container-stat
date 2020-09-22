@@ -13,7 +13,7 @@ FILES_OBJ = $(FILES:.cpp=.o)
 
 all: $(FILES_OBJ)
 	$(AS) rdtsc_func.S --64 -o rdtsc_func.o
-	$(CXX) $(wildcard *.o) -o cpp-container-stat.exe $(CXXFLAGS)
+	$(CXX) $(FILES_OBJ) rdtsc_func.o -o cpp-container-stat.exe $(CXXFLAGS)
 
 deps:
 	$(CXX) -MM $(FILES) > Makefile.deps
