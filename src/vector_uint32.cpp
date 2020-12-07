@@ -2,15 +2,21 @@
 #include "vector_uint32.h"
 
 vector_uint32::vector_uint32() :
-    buffer { }
+    m_buffer { },
+    m_cycles { 1 }
 {
 }
 
-vector_uint32::~vector_uint32()
+vector_uint32::vector_uint32(size_t cycles) :
+    m_buffer { },
+    m_cycles { cycles }
 {
 }
 
 void vector_uint32::run()
 {
-    buffer.push_back(0);
+    for (size_t i = 0; i < m_cycles; ++i)
+    {
+        m_buffer.push_back(0);
+    }
 }
