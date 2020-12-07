@@ -30,7 +30,7 @@ try
     std::cout << "Max. steps: " << maxSteps << std::endl;
     std::cout << "Container: " << container_type << std::endl;
 
-    std::unique_ptr<IContainer> container(CppContainer::instantiate(container_type));
+    std::unique_ptr<IContainer> container(CppContainer::instantiate(container_type, maxSteps));
 
     if (!container)
     {

@@ -8,7 +8,7 @@ class IContainer;
 class CppContainer
 {
     public:
-        static IContainer *instantiate(std::string const &type);
+        static IContainer *instantiate(std::string const &type, size_t cycles);
 
     public:
         CppContainer() = delete;

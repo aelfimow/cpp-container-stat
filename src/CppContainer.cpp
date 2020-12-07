@@ -9,13 +9,13 @@
 #include "vector_uint32.h"
 
 
-IContainer *CppContainer::instantiate(std::string const &type)
+IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
 {
     static std::map<std::string, std::function<IContainer *()>> const containers
     {
-        { "vector_uint8", []() { return new vector_uint8; } },
-        { "vector_uint16", []() { return new vector_uint16; } },
-        { "vector_uint32", []() { return new vector_uint32; } }
+        { "vector_uint8",  [&]() { return new vector_uint8 { cycles }; } },
+        { "vector_uint16", [&]() { return new vector_uint16 { cycles }; } },
+        { "vector_uint32", [&]() { return new vector_uint32 { cycles }; } }
     };
 
     if (auto it = containers.find(type); it != containers.end())
