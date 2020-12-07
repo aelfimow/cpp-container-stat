@@ -9,7 +9,6 @@
 class vector_uint8 : public IContainer
 {
     public:
-        vector_uint8();
         explicit vector_uint8(size_t cycles);
         ~vector_uint8() override = default;
 
@@ -18,6 +17,9 @@ class vector_uint8 : public IContainer
     private:
         std::vector<uint8_t> m_buffer;
         size_t const m_cycles;
+
+    public:
+        vector_uint8() = delete;
 };
 
 #endif
