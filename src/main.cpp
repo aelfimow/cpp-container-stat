@@ -39,12 +39,9 @@ try
     }
 
     auto tsc0 = ::rdtsc_func();
-
-    for (size_t step = 0; step < maxSteps; ++step)
     {
         container->run();
     }
-
     auto tsc1 = ::rdtsc_func();
 
     auto diff = tsc1 - tsc0;
