@@ -9,7 +9,6 @@
 class vector_uint16 : public IContainer
 {
     public:
-        vector_uint16();
         explicit vector_uint16(size_t cycles);
         ~vector_uint16() override = default;
 
@@ -18,6 +17,9 @@ class vector_uint16 : public IContainer
     private:
         std::vector<uint16_t> m_buffer;
         size_t const m_cycles;
+
+    public:
+        vector_uint16() = delete;
 };
 
 #endif

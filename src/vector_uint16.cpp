@@ -1,12 +1,6 @@
 #include "IContainer.h"
 #include "vector_uint16.h"
 
-vector_uint16::vector_uint16() :
-    m_buffer { },
-    m_cycles { 1 }
-{
-}
-
 vector_uint16::vector_uint16(size_t cycles) :
     m_buffer { },
     m_cycles { cycles }
