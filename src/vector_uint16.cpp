@@ -2,15 +2,21 @@
 #include "vector_uint16.h"
 
 vector_uint16::vector_uint16() :
-    buffer { }
+    m_buffer { },
+    m_cycles { 1 }
 {
 }
 
-vector_uint16::~vector_uint16()
+vector_uint16::vector_uint16(size_t cycles) :
+    m_buffer { },
+    m_cycles { cycles }
 {
 }
 
 void vector_uint16::run()
 {
-    buffer.push_back(0);
+    for (size_t i = 0; i < m_cycles; ++i)
+    {
+        m_buffer.push_back(0);
+    }
 }
