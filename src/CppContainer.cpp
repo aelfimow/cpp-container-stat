@@ -12,7 +12,7 @@
 
 IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
 {
-    static std::map<std::string, std::function<IContainer *()>> const containers
+    std::map<std::string, std::function<IContainer *()>> const containers
     {
         { "vector_uint8",  [&]() { return new vector_uint8 { cycles }; } },
         { "vector_uint16", [&]() { return new vector_uint16 { cycles }; } },
@@ -20,10 +20,12 @@ IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
         { "vector_uint64", [&]() { return new vector_uint64 { cycles }; } },
     };
 
-    if (auto it = containers.find(type); it != containers.end())
+    auto it = containers.find(type);
+
+    if (it == containers.end())
     {
-        return it->second();
+        throw std::invalid_argument("No container: " + type);
     }
 
-    return nullptr;
+    return it->second();
 }
