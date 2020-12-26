@@ -20,7 +20,7 @@ try
         ss >> maxCycles;
     }
 
-    std::string container_type { "vector_uint8" };
+    std::string container_type { "empty" };
     if (argc > 2)
     {
         container_type.clear();
