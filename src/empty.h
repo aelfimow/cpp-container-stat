@@ -3,6 +3,8 @@
 #else
 #define EMPTY_H
 
+#include <cstdlib>
+
 class empty : public IContainer
 {
     public:

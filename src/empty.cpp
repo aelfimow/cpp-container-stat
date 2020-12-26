@@ -1,7 +1,8 @@
 #include "IContainer.h"
 #include "empty.h"
 
-empty::empty(size_t)
+empty::empty(size_t) :
+    IContainer { }
 {
 }
 
