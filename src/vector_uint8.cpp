@@ -2,6 +2,7 @@
 #include "vector_uint8.h"
 
 vector_uint8::vector_uint8(size_t cycles) :
+    IContainer { },
     m_buffer { },
     m_cycles { cycles }
 {

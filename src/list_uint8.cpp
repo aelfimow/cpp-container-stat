@@ -2,6 +2,7 @@
 #include "list_uint8.h"
 
 list_uint8::list_uint8(size_t cycles) :
+    IContainer { },
     m_buffer { },
     m_cycles { cycles }
 {

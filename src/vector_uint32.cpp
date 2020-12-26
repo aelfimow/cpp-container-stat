@@ -2,6 +2,7 @@
 #include "vector_uint32.h"
 
 vector_uint32::vector_uint32(size_t cycles) :
+    IContainer { },
     m_buffer { },
     m_cycles { cycles }
 {

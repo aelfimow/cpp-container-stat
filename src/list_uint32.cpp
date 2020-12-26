@@ -2,6 +2,7 @@
 #include "list_uint32.h"
 
 list_uint32::list_uint32(size_t cycles) :
+    IContainer { },
     m_buffer { },
     m_cycles { cycles }
 {

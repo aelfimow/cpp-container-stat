@@ -2,6 +2,7 @@
 #include "vector_uint16.h"
 
 vector_uint16::vector_uint16(size_t cycles) :
+    IContainer { },
     m_buffer { },
     m_cycles { cycles }
 {

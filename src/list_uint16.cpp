@@ -2,6 +2,7 @@
 #include "list_uint16.h"
 
 list_uint16::list_uint16(size_t cycles) :
+    IContainer { },
     m_buffer { },
     m_cycles { cycles }
 {
