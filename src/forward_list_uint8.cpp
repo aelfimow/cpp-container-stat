@@ -12,6 +12,6 @@ void forward_list_uint8::run()
 {
     for (size_t i = 0; i < m_cycles; ++i)
     {
-        m_buffer.push_back(0);
+        m_buffer.push_front(0);
     }
 }
