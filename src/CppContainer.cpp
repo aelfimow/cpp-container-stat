@@ -12,6 +12,7 @@
 #include "list_uint8.h"
 #include "list_uint16.h"
 #include "list_uint32.h"
+#include "list_uint64.h"
 #include "forward_list_uint8.h"
 #include "forward_list_uint16.h"
 
@@ -28,6 +29,7 @@ IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
         { "list_uint8",          [&]() { return new list_uint8 { cycles }; } },
         { "list_uint16",         [&]() { return new list_uint16 { cycles }; } },
         { "list_uint32",         [&]() { return new list_uint32 { cycles }; } },
+        { "list_uint64",         [&]() { return new list_uint64 { cycles }; } },
         { "forward_list_uint8",  [&]() { return new forward_list_uint8 { cycles }; } },
         { "forward_list_uint16", [&]() { return new forward_list_uint16 { cycles }; } }
     };
