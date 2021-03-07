@@ -12,6 +12,7 @@ void forward_list_uint64::run()
 {
     for (size_t i = 0; i < m_cycles; ++i)
     {
-        m_buffer.push_front(0);
+        uint64_t value = static_cast<uint64_t>(i);
+        m_buffer.push_front(value);
     }
 }
