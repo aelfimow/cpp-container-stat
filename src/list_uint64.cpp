@@ -12,7 +12,7 @@ void list_uint64::run()
 {
     for (size_t i = 0; i < m_cycles; ++i)
     {
-        uint64_t value = static_cast<uint64_t>(i);
+        uint64_t value = i;
         m_buffer.push_back(value);
     }
 }
