@@ -12,6 +12,7 @@ void list_uint32::run()
 {
     for (size_t i = 0; i < m_cycles; ++i)
     {
-        m_buffer.push_back(0);
+        uint32_t value = static_cast<uint32_t>(i);
+        m_buffer.push_back(value);
     }
 }
