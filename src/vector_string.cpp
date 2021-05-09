@@ -1,5 +1,6 @@
 #include "IContainer.h"
 #include "vector_string.h"
+#include <sstream>
 
 vector_string::vector_string(size_t cycles) :
     IContainer { },
