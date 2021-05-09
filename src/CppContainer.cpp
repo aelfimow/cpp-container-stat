@@ -9,6 +9,7 @@
 #include "vector_uint16.h"
 #include "vector_uint32.h"
 #include "vector_uint64.h"
+#include "vector_string.h"
 #include "list_uint8.h"
 #include "list_uint16.h"
 #include "list_uint32.h"
@@ -30,6 +31,7 @@ IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
         { "vector_uint16",       [&]() { return new vector_uint16 { cycles }; } },
         { "vector_uint32",       [&]() { return new vector_uint32 { cycles }; } },
         { "vector_uint64",       [&]() { return new vector_uint64 { cycles }; } },
+        { "vector_string",       [&]() { return new vector_string { cycles }; } },
         { "list_uint8",          [&]() { return new list_uint8 { cycles }; } },
         { "list_uint16",         [&]() { return new list_uint16 { cycles }; } },
         { "list_uint32",         [&]() { return new list_uint32 { cycles }; } },
