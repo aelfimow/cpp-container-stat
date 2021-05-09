@@ -15,7 +15,7 @@ class map_uint8 : public IContainer
         void run() override;
 
     private:
-        std::vector<uint8_t> m_map;
+        std::map<size_t, uint8_t> m_map;
         size_t const m_cycles;
 
     public:
