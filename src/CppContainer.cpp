@@ -6,6 +6,7 @@
 #include "IContainer.h"
 #include "empty.h"
 #include "map_uint8.h"
+#include "map_uint16.h"
 #include "vector_uint8.h"
 #include "vector_uint16.h"
 #include "vector_uint32.h"
@@ -29,6 +30,7 @@ IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
     {
         { "empty",               [&]() { return new empty { cycles }; } },
         { "map_uint8",           [&]() { return new map_uint8 { cycles }; } },
+        { "map_uint16",          [&]() { return new map_uint16 { cycles }; } },
         { "vector_uint8",        [&]() { return new vector_uint8 { cycles }; } },
         { "vector_uint16",       [&]() { return new vector_uint16 { cycles }; } },
         { "vector_uint32",       [&]() { return new vector_uint32 { cycles }; } },
