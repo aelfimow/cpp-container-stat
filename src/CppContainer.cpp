@@ -1,6 +1,7 @@
 #include <string>
 #include <map>
 #include <functional>
+#include <stdexcept>
 
 #include "CppContainer.h"
 #include "IContainer.h"
