@@ -4,7 +4,7 @@
 CXXFLAGS  = -O3 -m64
 CXXFLAGS += -Wall
 CXXFLAGS += -Wextra
-CXXFLAGS += -pedantic
+#CXXFLAGS += -pedantic      # Disabled due to usage of __int128
 CXXFLAGS += -Weffc++
 CXXFLAGS += -std=c++17
 CXXFLAGS += -Werror
@@ -136,7 +136,7 @@ CXXFLAGS += -Wpacked-bitfield-compat
 CXXFLAGS += -Wpacked-not-aligned
 CXXFLAGS += -Wno-padded
 CXXFLAGS += -Wparentheses
-CXXFLAGS += -Wpedantic
+#CXXFLAGS += -Wpedantic         # Disabled due to usage of __int128
 CXXFLAGS += -Wpessimizing-move
 CXXFLAGS += -Wplacement-new=2
 CXXFLAGS += -Wpmf-conversions
