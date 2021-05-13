@@ -26,6 +26,7 @@
 #include "forward_list_uint16.h"
 #include "forward_list_uint32.h"
 #include "forward_list_uint64.h"
+#include "forward_list_uint128.h"
 #include "forward_list_string.h"
 
 
@@ -33,28 +34,29 @@ IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
 {
     std::map<std::string, std::function<IContainer *()>> const containers
     {
-        { "empty",               [&]() { return new empty { cycles }; } },
-        { "map_uint8",           [&]() { return new map_uint8 { cycles }; } },
-        { "map_uint16",          [&]() { return new map_uint16 { cycles }; } },
-        { "map_uint32",          [&]() { return new map_uint32 { cycles }; } },
-        { "map_uint64",          [&]() { return new map_uint64 { cycles }; } },
-        { "map_uint128",         [&]() { return new map_uint128 { cycles }; } },
-        { "vector_uint8",        [&]() { return new vector_uint8 { cycles }; } },
-        { "vector_uint16",       [&]() { return new vector_uint16 { cycles }; } },
-        { "vector_uint32",       [&]() { return new vector_uint32 { cycles }; } },
-        { "vector_uint64",       [&]() { return new vector_uint64 { cycles }; } },
-        { "vector_uint128",      [&]() { return new vector_uint128 { cycles }; } },
-        { "vector_string",       [&]() { return new vector_string { cycles }; } },
-        { "list_uint8",          [&]() { return new list_uint8 { cycles }; } },
-        { "list_uint16",         [&]() { return new list_uint16 { cycles }; } },
-        { "list_uint32",         [&]() { return new list_uint32 { cycles }; } },
-        { "list_uint64",         [&]() { return new list_uint64 { cycles }; } },
-        { "list_string",         [&]() { return new list_string { cycles }; } },
-        { "forward_list_uint8",  [&]() { return new forward_list_uint8 { cycles }; } },
-        { "forward_list_uint16", [&]() { return new forward_list_uint16 { cycles }; } },
-        { "forward_list_uint32", [&]() { return new forward_list_uint32 { cycles }; } },
-        { "forward_list_uint64", [&]() { return new forward_list_uint64 { cycles }; } },
-        { "forward_list_string", [&]() { return new forward_list_string { cycles }; } }
+        { "empty",                [&]() { return new empty { cycles }; } },
+        { "map_uint8",            [&]() { return new map_uint8 { cycles }; } },
+        { "map_uint16",           [&]() { return new map_uint16 { cycles }; } },
+        { "map_uint32",           [&]() { return new map_uint32 { cycles }; } },
+        { "map_uint64",           [&]() { return new map_uint64 { cycles }; } },
+        { "map_uint128",          [&]() { return new map_uint128 { cycles }; } },
+        { "vector_uint8",         [&]() { return new vector_uint8 { cycles }; } },
+        { "vector_uint16",        [&]() { return new vector_uint16 { cycles }; } },
+        { "vector_uint32",        [&]() { return new vector_uint32 { cycles }; } },
+        { "vector_uint64",        [&]() { return new vector_uint64 { cycles }; } },
+        { "vector_uint128",       [&]() { return new vector_uint128 { cycles }; } },
+        { "vector_string",        [&]() { return new vector_string { cycles }; } },
+        { "list_uint8",           [&]() { return new list_uint8 { cycles }; } },
+        { "list_uint16",          [&]() { return new list_uint16 { cycles }; } },
+        { "list_uint32",          [&]() { return new list_uint32 { cycles }; } },
+        { "list_uint64",          [&]() { return new list_uint64 { cycles }; } },
+        { "list_string",          [&]() { return new list_string { cycles }; } },
+        { "forward_list_uint8",   [&]() { return new forward_list_uint8 { cycles }; } },
+        { "forward_list_uint16",  [&]() { return new forward_list_uint16 { cycles }; } },
+        { "forward_list_uint32",  [&]() { return new forward_list_uint32 { cycles }; } },
+        { "forward_list_uint64",  [&]() { return new forward_list_uint64 { cycles }; } },
+        { "forward_list_uint128", [&]() { return new forward_list_uint128 { cycles }; } },
+        { "forward_list_string",  [&]() { return new forward_list_string { cycles }; } }
     };
 
     auto it = containers.find(type);
