@@ -4,10 +4,12 @@ CppContainer.o: CppContainer.cpp CppContainer.h IContainer.h empty.h \
  vector_uint128.h vector_string.h list_uint8.h list_uint16.h \
  list_uint32.h list_uint64.h list_string.h forward_list_uint8.h \
  forward_list_uint16.h forward_list_uint32.h forward_list_uint64.h \
- forward_list_string.h
+ forward_list_uint128.h forward_list_string.h
 empty.o: empty.cpp IContainer.h empty.h
 forward_list_string.o: forward_list_string.cpp IContainer.h \
  forward_list_string.h
+forward_list_uint128.o: forward_list_uint128.cpp IContainer.h \
+ forward_list_uint128.h
 forward_list_uint16.o: forward_list_uint16.cpp IContainer.h \
  forward_list_uint16.h
 forward_list_uint32.o: forward_list_uint32.cpp IContainer.h \
