@@ -11,6 +11,7 @@
 #include "map_uint32.h"
 #include "map_uint64.h"
 #include "map_uint128.h"
+#include "map_string.h"
 #include "vector_uint8.h"
 #include "vector_uint16.h"
 #include "vector_uint32.h"
@@ -41,6 +42,7 @@ IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
         { "map_uint32",           [&]() { return new map_uint32 { cycles }; } },
         { "map_uint64",           [&]() { return new map_uint64 { cycles }; } },
         { "map_uint128",          [&]() { return new map_uint128 { cycles }; } },
+        { "map_string",           [&]() { return new map_string { cycles }; } },
         { "vector_uint8",         [&]() { return new vector_uint8 { cycles }; } },
         { "vector_uint16",        [&]() { return new vector_uint16 { cycles }; } },
         { "vector_uint32",        [&]() { return new vector_uint32 { cycles }; } },
