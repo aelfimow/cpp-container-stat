@@ -4,6 +4,7 @@
 #define FORWARD_LIST_COMPLEX128_H
 
 #include <forward_list>
+#include <quadmath.h>
 #include <cstdint>
 
 class forward_list_complex128 : public IContainer
