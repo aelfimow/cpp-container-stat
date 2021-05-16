@@ -6,8 +6,10 @@ CppContainer.o: CppContainer.cpp CppContainer.h IContainer.h empty.h \
  forward_list_uint8.h forward_list_uint16.h forward_list_uint32.h \
  forward_list_uint64.h forward_list_uint128.h forward_list_string.h \
  forward_list_float.h forward_list_double.h forward_list_long_double.h \
- forward_list_float128.h
+ forward_list_float128.h forward_list_complex128.h
 empty.o: empty.cpp IContainer.h empty.h
+forward_list_complex128.o: forward_list_complex128.cpp IContainer.h \
+ forward_list_complex128.h
 forward_list_double.o: forward_list_double.cpp IContainer.h \
  forward_list_double.h
 forward_list_float.o: forward_list_float.cpp IContainer.h \
