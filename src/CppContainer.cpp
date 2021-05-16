@@ -31,6 +31,7 @@
 #include "forward_list_uint128.h"
 #include "forward_list_string.h"
 #include "forward_list_float.h"
+#include "forward_list_double.h"
 
 
 IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
@@ -62,7 +63,8 @@ IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
         { "forward_list_uint64",  [&]() { return new forward_list_uint64 { cycles }; } },
         { "forward_list_uint128", [&]() { return new forward_list_uint128 { cycles }; } },
         { "forward_list_string",  [&]() { return new forward_list_string { cycles }; } },
-        { "forward_list_float",   [&]() { return new forward_list_float { cycles }; } }
+        { "forward_list_float",   [&]() { return new forward_list_float { cycles }; } },
+        { "forward_list_double",  [&]() { return new forward_list_double { cycles }; } }
     };
 
     auto it = containers.find(type);
