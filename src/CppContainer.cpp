@@ -16,6 +16,7 @@
 #include "map_double.h"
 #include "map_long_double.h"
 #include "map_float128.h"
+#include "map_complex128.h"
 #include "vector_uint8.h"
 #include "vector_uint16.h"
 #include "vector_uint32.h"
@@ -56,6 +57,7 @@ IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
         { "map_double",                 [&]() { return new map_double { cycles }; } },
         { "map_long_double",            [&]() { return new map_long_double { cycles }; } },
         { "map_float128",               [&]() { return new map_float128 { cycles }; } },
+        { "map_complex128",             [&]() { return new map_complex128 { cycles }; } },
         { "vector_uint8",               [&]() { return new vector_uint8 { cycles }; } },
         { "vector_uint16",              [&]() { return new vector_uint16 { cycles }; } },
         { "vector_uint32",              [&]() { return new vector_uint32 { cycles }; } },
