@@ -3,12 +3,13 @@ CppContainer.o: CppContainer.cpp CppContainer.h IContainer.h empty.h \
  map_string.h map_float.h map_double.h map_long_double.h map_float128.h \
  map_complex128.h vector_uint8.h vector_uint16.h vector_uint32.h \
  vector_uint64.h vector_uint128.h vector_string.h vector_float.h \
- vector_double.h vector_long_double.h vector_float128.h list_uint8.h \
- list_uint16.h list_uint32.h list_uint64.h list_uint128.h list_string.h \
- forward_list_uint8.h forward_list_uint16.h forward_list_uint32.h \
- forward_list_uint64.h forward_list_uint128.h forward_list_string.h \
- forward_list_float.h forward_list_double.h forward_list_long_double.h \
- forward_list_float128.h forward_list_complex128.h
+ vector_double.h vector_long_double.h vector_float128.h \
+ vector_complex128.h list_uint8.h list_uint16.h list_uint32.h \
+ list_uint64.h list_uint128.h list_string.h forward_list_uint8.h \
+ forward_list_uint16.h forward_list_uint32.h forward_list_uint64.h \
+ forward_list_uint128.h forward_list_string.h forward_list_float.h \
+ forward_list_double.h forward_list_long_double.h forward_list_float128.h \
+ forward_list_complex128.h
 empty.o: empty.cpp IContainer.h empty.h
 forward_list_complex128.o: forward_list_complex128.cpp IContainer.h \
  forward_list_complex128.h
@@ -50,6 +51,8 @@ map_uint16.o: map_uint16.cpp IContainer.h map_uint16.h
 map_uint32.o: map_uint32.cpp IContainer.h map_uint32.h
 map_uint64.o: map_uint64.cpp IContainer.h map_uint64.h
 map_uint8.o: map_uint8.cpp IContainer.h map_uint8.h
+vector_complex128.o: vector_complex128.cpp IContainer.h \
+ vector_complex128.h
 vector_double.o: vector_double.cpp IContainer.h vector_double.h
 vector_float.o: vector_float.cpp IContainer.h vector_float.h
 vector_float128.o: vector_float128.cpp IContainer.h vector_float128.h
