@@ -26,6 +26,7 @@
 #include "vector_float.h"
 #include "vector_double.h"
 #include "vector_long_double.h"
+#include "vector_float128.h"
 #include "list_uint8.h"
 #include "list_uint16.h"
 #include "list_uint32.h"
@@ -70,6 +71,7 @@ IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
         { "vector_float",               [&]() { return new vector_float { cycles }; } },
         { "vector_double",              [&]() { return new vector_double { cycles }; } },
         { "vector_long_double",         [&]() { return new vector_long_double { cycles }; } },
+        { "vector_float128",            [&]() { return new vector_float128 { cycles }; } },
         { "list_uint8",                 [&]() { return new list_uint8 { cycles }; } },
         { "list_uint16",                [&]() { return new list_uint16 { cycles }; } },
         { "list_uint32",                [&]() { return new list_uint32 { cycles }; } },
