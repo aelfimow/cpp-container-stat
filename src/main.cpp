@@ -4,6 +4,7 @@
 #include "rdtsc_func.h"
 #include "CppContainer.h"
 #include "IContainer.h"
+#include "size_check.h"
 
 
 int main(int argc, char *argv[])
