@@ -35,6 +35,7 @@
 #include "list_uint128.h"
 #include "list_string.h"
 #include "list_float.h"
+#include "list_double.h"
 #include "forward_list_uint8.h"
 #include "forward_list_uint16.h"
 #include "forward_list_uint32.h"
@@ -82,6 +83,7 @@ IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
         { "list_uint128",               [&]() { return new list_uint128 { cycles }; } },
         { "list_string",                [&]() { return new list_string { cycles }; } },
         { "list_float",                 [&]() { return new list_float { cycles }; } },
+        { "list_double",                [&]() { return new list_double { cycles }; } },
         { "forward_list_uint8",         [&]() { return new forward_list_uint8 { cycles }; } },
         { "forward_list_uint16",        [&]() { return new forward_list_uint16 { cycles }; } },
         { "forward_list_uint32",        [&]() { return new forward_list_uint32 { cycles }; } },
