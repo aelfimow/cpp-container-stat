@@ -231,12 +231,15 @@ CXXFLAGS += -Wzero-as-null-pointer-constant
 
 FILES = $(wildcard *.cpp)
 FILES_OBJ = $(FILES:.cpp=.o)
+FILES_OBJ += rdtsc_func.o
 
 all: $(FILES_OBJ)
-	$(AS) rdtsc_func.S --64 -o rdtsc_func.o
-	$(CXX) $(FILES_OBJ) rdtsc_func.o -o cpp-container-stat.exe $(CXXFLAGS)
+	$(CXX) $(FILES_OBJ) -o cpp-container-stat.exe
 
 deps:
 	$(CXX) -MM $(FILES) > Makefile.deps
+
+rdtsc_func.o: rdtsc_func.S
+	$(AS) rdtsc_func.S --64 -o rdtsc_func.o
 
 include Makefile.deps
