@@ -38,6 +38,7 @@
 #include "list_double.h"
 #include "list_long_double.h"
 #include "list_float128.h"
+#include "list_complex128.h"
 #include "forward_list_uint8.h"
 #include "forward_list_uint16.h"
 #include "forward_list_uint32.h"
@@ -88,6 +89,7 @@ IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
         { "list_double",                [&]() { return new list_double { cycles }; } },
         { "list_long_double",           [&]() { return new list_long_double { cycles }; } },
         { "list_float128",              [&]() { return new list_float128 { cycles }; } },
+        { "list_complex128",            [&]() { return new list_complex128 { cycles }; } },
         { "forward_list_uint8",         [&]() { return new forward_list_uint8 { cycles }; } },
         { "forward_list_uint16",        [&]() { return new forward_list_uint16 { cycles }; } },
         { "forward_list_uint32",        [&]() { return new forward_list_uint32 { cycles }; } },
