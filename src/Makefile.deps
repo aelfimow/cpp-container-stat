@@ -45,7 +45,7 @@ list_uint16.o: list_uint16.cpp IContainer.h list_uint16.h
 list_uint32.o: list_uint32.cpp IContainer.h list_uint32.h
 list_uint64.o: list_uint64.cpp IContainer.h list_uint64.h
 list_uint8.o: list_uint8.cpp IContainer.h list_uint8.h
-main.o: main.cpp rdtsc_func.h CppContainer.h IContainer.h
+main.o: main.cpp rdtsc_func.h CppContainer.h IContainer.h size_check.h
 map_complex128.o: map_complex128.cpp IContainer.h map_complex128.h
 map_double.o: map_double.cpp IContainer.h map_double.h
 map_float.o: map_float.cpp IContainer.h map_float.h
