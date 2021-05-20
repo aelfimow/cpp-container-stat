@@ -53,6 +53,7 @@
 #include "deque_uint8.h"
 #include "deque_uint16.h"
 #include "deque_uint32.h"
+#include "deque_uint64.h"
 
 
 IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
@@ -106,7 +107,8 @@ IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
         { "forward_list_complex128",    [&]() { return new forward_list_complex128 { cycles }; } },
         { "deque_uint8",                [&]() { return new deque_uint8 { cycles }; } },
         { "deque_uint16",               [&]() { return new deque_uint16 { cycles }; } },
-        { "deque_uint32",               [&]() { return new deque_uint32 { cycles }; } }
+        { "deque_uint32",               [&]() { return new deque_uint32 { cycles }; } },
+        { "deque_uint64",               [&]() { return new deque_uint64 { cycles }; } }
     };
 
     auto it = containers.find(type);
