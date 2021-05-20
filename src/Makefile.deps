@@ -11,8 +11,9 @@ CppContainer.o: CppContainer.cpp CppContainer.h IContainer.h empty.h \
  forward_list_uint64.h forward_list_uint128.h forward_list_string.h \
  forward_list_float.h forward_list_double.h forward_list_long_double.h \
  forward_list_float128.h forward_list_complex128.h deque_uint8.h \
- deque_uint16.h
+ deque_uint16.h deque_uint32.h
 deque_uint16.o: deque_uint16.cpp IContainer.h deque_uint16.h
+deque_uint32.o: deque_uint32.cpp IContainer.h deque_uint32.h
 deque_uint8.o: deque_uint8.cpp IContainer.h deque_uint8.h
 empty.o: empty.cpp IContainer.h empty.h
 forward_list_complex128.o: forward_list_complex128.cpp IContainer.h \
