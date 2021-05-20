@@ -8,7 +8,7 @@ deque_uint32::deque_uint32(size_t cycles) :
 {
 }
 
-void deque_uint16::run()
+void deque_uint32::run()
 {
     for (size_t i = 0; i < m_cycles; ++i)
     {
