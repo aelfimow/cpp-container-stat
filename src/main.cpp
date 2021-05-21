@@ -1,6 +1,7 @@
 #include <iostream>
 #include <sstream>
 #include <memory>
+#include <vector>
 #include "rdtsc_func.h"
 #include "CppContainer.h"
 #include "IContainer.h"
@@ -27,17 +28,25 @@ try
     std::cout << "Container: " << container_type << std::endl;
     std::cout << "Max. cycles: " << maxCycles << std::endl;
 
-    std::unique_ptr<IContainer> container(CppContainer::instantiate(container_type, maxCycles));
+    std::vector<uint64_t> diffs(20);
 
-    auto tsc0 = ::rdtsc_func();
+    for (auto &diff: diffs)
     {
-        container->run();
+        std::unique_ptr<IContainer> container(CppContainer::instantiate(container_type, maxCycles));
+
+        auto tsc0 = ::rdtsc_func();
+        {
+            container->run();
+        }
+        auto tsc1 = ::rdtsc_func();
+
+        diff = tsc1 - tsc0;
     }
-    auto tsc1 = ::rdtsc_func();
 
-    auto diff = tsc1 - tsc0;
-
-    std::cout << "Clocks: " << diff << std::endl;
+    for (auto &diff: diffs)
+    {
+        std::cout << "Clocks: " << diff << std::endl;
+    }
 
     return EXIT_SUCCESS;
 }
