@@ -30,6 +30,8 @@ try
 
     std::vector<uint64_t> diffs(20);
 
+    std::cout << "Running..." << std::endl;
+
     for (auto &diff: diffs)
     {
         std::unique_ptr<IContainer> container(CppContainer::instantiate(container_type, maxCycles));
