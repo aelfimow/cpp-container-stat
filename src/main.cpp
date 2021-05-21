@@ -10,26 +10,22 @@
 int main(int argc, char *argv[])
 try
 {
-    if (argc < 2)
+    if (argc < 3)
     {
-        throw std::invalid_argument("Usage: maxCycles [container]");
+        throw std::invalid_argument("Usage: container maxCycles");
     }
+
+    std::string container_type;
+    container_type.append(argv[1]);
 
     size_t maxCycles = 0;
     {
-        std::stringstream ss { argv[1] };
+        std::stringstream ss { argv[2] };
         ss >> maxCycles;
     }
 
-    std::string container_type { "empty" };
-    if (argc > 2)
-    {
-        container_type.clear();
-        container_type.append(argv[2]);
-    }
-
-    std::cout << "Max. cycles: " << maxCycles << std::endl;
     std::cout << "Container: " << container_type << std::endl;
+    std::cout << "Max. cycles: " << maxCycles << std::endl;
 
     std::unique_ptr<IContainer> container(CppContainer::instantiate(container_type, maxCycles));
 
