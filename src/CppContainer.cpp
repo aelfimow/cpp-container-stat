@@ -57,6 +57,7 @@
 #include "deque_uint128.h"
 #include "deque_float.h"
 #include "deque_double.h"
+#include "deque_long_double.h"
 
 
 IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
@@ -114,7 +115,8 @@ IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
         { "deque_uint64",               [&]() { return new deque_uint64 { cycles }; } },
         { "deque_uint128",              [&]() { return new deque_uint128 { cycles }; } },
         { "deque_float",                [&]() { return new deque_float { cycles }; } },
-        { "deque_double",               [&]() { return new deque_double { cycles }; } }
+        { "deque_double",               [&]() { return new deque_double { cycles }; } },
+        { "deque_long_double",          [&]() { return new deque_long_double { cycles }; } }
     };
 
     auto it = containers.find(type);
