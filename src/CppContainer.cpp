@@ -60,6 +60,7 @@
 #include "deque_long_double.h"
 #include "deque_float128.h"
 #include "deque_complex128.h"
+#include "set_uint8.h"
 
 
 IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
@@ -120,7 +121,8 @@ IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
         { "deque_double",               [&]() { return new deque_double { cycles }; } },
         { "deque_long_double",          [&]() { return new deque_long_double { cycles }; } },
         { "deque_float128",             [&]() { return new deque_float128 { cycles }; } },
-        { "deque_complex128",           [&]() { return new deque_complex128 { cycles }; } }
+        { "deque_complex128",           [&]() { return new deque_complex128 { cycles }; } },
+        { "set_uint8",                  [&]() { return new set_uint8 { cycles }; } }
     };
 
     auto it = containers.find(type);
