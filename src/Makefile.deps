@@ -13,7 +13,7 @@ CppContainer.o: CppContainer.cpp CppContainer.h IContainer.h empty.h \
  forward_list_float128.h forward_list_complex128.h deque_uint8.h \
  deque_uint16.h deque_uint32.h deque_uint64.h deque_uint128.h \
  deque_float.h deque_double.h deque_long_double.h deque_float128.h \
- deque_complex128.h set_uint8.h set_uint16.h set_uint32.h
+ deque_complex128.h set_uint8.h set_uint16.h set_uint32.h set_uint64.h
 deque_complex128.o: deque_complex128.cpp IContainer.h deque_complex128.h
 deque_double.o: deque_double.cpp IContainer.h deque_double.h
 deque_float.o: deque_float.cpp IContainer.h deque_float.h
@@ -73,6 +73,7 @@ map_uint64.o: map_uint64.cpp IContainer.h map_uint64.h
 map_uint8.o: map_uint8.cpp IContainer.h map_uint8.h
 set_uint16.o: set_uint16.cpp IContainer.h set_uint16.h
 set_uint32.o: set_uint32.cpp IContainer.h set_uint32.h
+set_uint64.o: set_uint64.cpp IContainer.h set_uint64.h
 set_uint8.o: set_uint8.cpp IContainer.h set_uint8.h
 vector_complex128.o: vector_complex128.cpp IContainer.h \
  vector_complex128.h
