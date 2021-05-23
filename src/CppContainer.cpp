@@ -63,6 +63,7 @@
 #include "set_uint8.h"
 #include "set_uint16.h"
 #include "set_uint32.h"
+#include "set_uint64.h"
 
 
 IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
@@ -126,7 +127,8 @@ IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
         { "deque_complex128",           [&]() { return new deque_complex128 { cycles }; } },
         { "set_uint8",                  [&]() { return new set_uint8 { cycles }; } },
         { "set_uint16",                 [&]() { return new set_uint16 { cycles }; } },
-        { "set_uint32",                 [&]() { return new set_uint32 { cycles }; } }
+        { "set_uint32",                 [&]() { return new set_uint32 { cycles }; } },
+        { "set_uint64",                 [&]() { return new set_uint64 { cycles }; } }
     };
 
     auto it = containers.find(type);
