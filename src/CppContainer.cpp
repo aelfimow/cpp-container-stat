@@ -65,6 +65,7 @@
 #include "set_uint32.h"
 #include "set_uint64.h"
 #include "set_uint128.h"
+#include "set_float.h"
 
 
 IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
@@ -130,7 +131,8 @@ IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
         { "set_uint16",                 [&]() { return new set_uint16 { cycles }; } },
         { "set_uint32",                 [&]() { return new set_uint32 { cycles }; } },
         { "set_uint64",                 [&]() { return new set_uint64 { cycles }; } },
-        { "set_uint128",                [&]() { return new set_uint128 { cycles }; } }
+        { "set_uint128",                [&]() { return new set_uint128 { cycles }; } },
+        { "set_float",                  [&]() { return new set_float { cycles }; } }
     };
 
     auto it = containers.find(type);
