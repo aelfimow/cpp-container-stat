@@ -69,6 +69,7 @@
 #include "set_double.h"
 #include "set_long_double.h"
 #include "set_float128.h"
+#include "set_string.h"
 
 
 IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
@@ -138,7 +139,8 @@ IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
         { "set_float",                  [&]() { return new set_float { cycles }; } },
         { "set_double",                 [&]() { return new set_double { cycles }; } },
         { "set_long_double",            [&]() { return new set_long_double { cycles }; } },
-        { "set_float128",               [&]() { return new set_float128 { cycles }; } }
+        { "set_float128",               [&]() { return new set_float128 { cycles }; } },
+        { "set_string",                 [&]() { return new set_string { cycles }; } }
     };
 
     auto it = containers.find(type);
