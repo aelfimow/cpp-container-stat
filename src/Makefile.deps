@@ -15,7 +15,7 @@ CppContainer.o: CppContainer.cpp CppContainer.h IContainer.h empty.h \
  deque_float.h deque_double.h deque_long_double.h deque_float128.h \
  deque_complex128.h set_uint8.h set_uint16.h set_uint32.h set_uint64.h \
  set_uint128.h set_float.h set_double.h set_long_double.h set_float128.h \
- set_string.h
+ set_string.h multiset_uint8.h
 deque_complex128.o: deque_complex128.cpp IContainer.h deque_complex128.h
 deque_double.o: deque_double.cpp IContainer.h deque_double.h
 deque_float.o: deque_float.cpp IContainer.h deque_float.h
@@ -73,6 +73,7 @@ map_uint16.o: map_uint16.cpp IContainer.h map_uint16.h
 map_uint32.o: map_uint32.cpp IContainer.h map_uint32.h
 map_uint64.o: map_uint64.cpp IContainer.h map_uint64.h
 map_uint8.o: map_uint8.cpp IContainer.h map_uint8.h
+multiset_uint8.o: multiset_uint8.cpp IContainer.h multiset_uint8.h
 set_double.o: set_double.cpp IContainer.h set_double.h
 set_float.o: set_float.cpp IContainer.h set_float.h
 set_float128.o: set_float128.cpp IContainer.h set_float128.h
