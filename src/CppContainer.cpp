@@ -72,6 +72,7 @@
 #include "set_string.h"
 #include "multiset_uint8.h"
 #include "multiset_uint16.h"
+#include "multiset_uint32.h"
 
 
 IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
@@ -144,7 +145,8 @@ IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
         { "set_float128",               [&]() { return new set_float128 { cycles }; } },
         { "set_string",                 [&]() { return new set_string { cycles }; } },
         { "multiset_uint8",             [&]() { return new multiset_uint8 { cycles }; } },
-        { "multiset_uint16",            [&]() { return new multiset_uint16 { cycles }; } }
+        { "multiset_uint16",            [&]() { return new multiset_uint16 { cycles }; } },
+        { "multiset_uint32",            [&]() { return new multiset_uint32 { cycles }; } }
     };
 
     auto it = containers.find(type);
