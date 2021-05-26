@@ -75,6 +75,7 @@
 #include "multiset_uint32.h"
 #include "multiset_uint64.h"
 #include "multiset_uint128.h"
+#include "multiset_float.h"
 
 
 IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
@@ -150,7 +151,8 @@ IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
         { "multiset_uint16",            [&]() { return new multiset_uint16 { cycles }; } },
         { "multiset_uint32",            [&]() { return new multiset_uint32 { cycles }; } },
         { "multiset_uint64",            [&]() { return new multiset_uint64 { cycles }; } },
-        { "multiset_uint128",           [&]() { return new multiset_uint128 { cycles }; } }
+        { "multiset_uint128",           [&]() { return new multiset_uint128 { cycles }; } },
+        { "multiset_float",             [&]() { return new multiset_float { cycles }; } }
     };
 
     auto it = containers.find(type);
