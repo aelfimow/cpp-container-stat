@@ -80,6 +80,7 @@
 #include "multiset_long_double.h"
 #include "multiset_float128.h"
 #include "multiset_string.h"
+#include "unordered_set_uint8.h"
 
 
 IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
@@ -160,7 +161,8 @@ IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
         { "multiset_double",            [&]() { return new multiset_double { cycles }; } },
         { "multiset_long_double",       [&]() { return new multiset_long_double { cycles }; } },
         { "multiset_float128",          [&]() { return new multiset_float128 { cycles }; } },
-        { "multiset_string",            [&]() { return new multiset_string { cycles }; } }
+        { "multiset_string",            [&]() { return new multiset_string { cycles }; } },
+        { "unordered_set_uint8",        [&]() { return new unordered_set_uint8 { cycles }; } }
     };
 
     auto it = containers.find(type);
