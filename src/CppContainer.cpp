@@ -83,6 +83,7 @@
 #include "unordered_set_uint8.h"
 #include "unordered_set_uint16.h"
 #include "unordered_set_uint32.h"
+#include "unordered_set_uint64.h"
 
 
 IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
@@ -166,7 +167,8 @@ IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
         { "multiset_string",            [&]() { return new multiset_string { cycles }; } },
         { "unordered_set_uint8",        [&]() { return new unordered_set_uint8 { cycles }; } },
         { "unordered_set_uint16",       [&]() { return new unordered_set_uint16 { cycles }; } },
-        { "unordered_set_uint32",       [&]() { return new unordered_set_uint32 { cycles }; } }
+        { "unordered_set_uint32",       [&]() { return new unordered_set_uint32 { cycles }; } },
+        { "unordered_set_uint64",       [&]() { return new unordered_set_uint64 { cycles }; } }
     };
 
     auto it = containers.find(type);
