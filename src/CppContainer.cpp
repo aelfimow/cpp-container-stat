@@ -85,6 +85,7 @@
 #include "unordered_set_uint32.h"
 #include "unordered_set_uint64.h"
 #include "unordered_set_float.h"
+#include "unordered_set_double.h"
 
 
 IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
@@ -170,7 +171,8 @@ IContainer *CppContainer::instantiate(std::string const &type, size_t cycles)
         { "unordered_set_uint16",       [&]() { return new unordered_set_uint16 { cycles }; } },
         { "unordered_set_uint32",       [&]() { return new unordered_set_uint32 { cycles }; } },
         { "unordered_set_uint64",       [&]() { return new unordered_set_uint64 { cycles }; } },
-        { "unordered_set_float",        [&]() { return new unordered_set_float { cycles }; } }
+        { "unordered_set_float",        [&]() { return new unordered_set_float { cycles }; } },
+        { "unordered_set_double",       [&]() { return new unordered_set_double { cycles }; } }
     };
 
     auto it = containers.find(type);
