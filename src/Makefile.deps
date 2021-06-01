@@ -22,7 +22,7 @@ CppContainer.o: CppContainer.cpp CppContainer.h IContainer.h empty.h \
  unordered_set_uint64.h unordered_set_float.h unordered_set_double.h \
  unordered_set_long_double.h unordered_set_string.h \
  unordered_multiset_uint8.h unordered_multiset_uint16.h \
- unordered_multiset_uint32.h
+ unordered_multiset_uint32.h unordered_multiset_uint64.h
 deque_complex128.o: deque_complex128.cpp IContainer.h deque_complex128.h
 deque_double.o: deque_double.cpp IContainer.h deque_double.h
 deque_float.o: deque_float.cpp IContainer.h deque_float.h
@@ -106,6 +106,8 @@ unordered_multiset_uint16.o: unordered_multiset_uint16.cpp IContainer.h \
  unordered_multiset_uint16.h
 unordered_multiset_uint32.o: unordered_multiset_uint32.cpp IContainer.h \
  unordered_multiset_uint32.h
+unordered_multiset_uint64.o: unordered_multiset_uint64.cpp IContainer.h \
+ unordered_multiset_uint64.h
 unordered_multiset_uint8.o: unordered_multiset_uint8.cpp IContainer.h \
  unordered_multiset_uint8.h
 unordered_set_double.o: unordered_set_double.cpp IContainer.h \
